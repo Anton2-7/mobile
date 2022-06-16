@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <div class="container-reg">
+      <h1 class="container__reg-headline">Регистрация</h1>
+      <p class="container__reg-text">
+        1. Введите имя пользователя telegram или идентификатор
+      </p>
+      <form
+        id="Reg_t"
+        enctype="application/json"
+        action=""
+        method="POST"
+        onsubmit="return false"
+      >
+        <input
+          class="container__input-reg-username"
+          placeholder="@Имя пользователя"
+          name="login"
+          id="tg_id"
+          required
+        />
+        <input name="type" value="authorize" method="POST" type="hidden" />
+        <button
+          class="container__reg-button-next"
+          type="submit"
+          id="#authentication.html"
+        >
+          Далее
+        </button>
+      </form>
+    </div>
+    <script>
+      function f1() {
+        let a = document.querySelector(".container__reg-button-next");
+        a.classList.add("bt-active");
+      }
+      document.querySelector(".container__input-reg-username").onclick = f1;
+
+      /*Попытка переадресации*/
+      $("document").ready(function () {
+        $("#Reg_t").on("submit", function () {
+          let dataForm = $(this).serialize();
+
+          $.ajax({
+            url: "http://176.99.6.251:8888/auth/",
+            method: "post",
+            dataType: "JSON",
+            data: $(this).serialize(),
+            Vary: "Accept",
+            headers: {
+              "Access-Control-Allow-Origin": "<origin>",
+              "Content-Type": "application/json",
+            },
+            mode: "corse",
+            body: JSON.stringify({
+              dataForm,
+              type: "authorize",
+            }),
+            // success: function (data) {
+            //   $("#message").html(data);
+            // },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
