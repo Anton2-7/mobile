@@ -4,11 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="upgrade-insecure-requests"
-    />
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Регистрация</title>
     <link rel="stylesheet" href="style/style.css" />
@@ -56,7 +51,7 @@
           let dataForm = $(this).serialize();
 
           $.ajax({
-            url: "https://176.99.6.251:8888/auth/",
+            url: "http://176.99.6.251:8888/auth/",
             method: "post",
             dataType: "JSON",
             data: $(this).serialize(),
