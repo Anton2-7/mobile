@@ -56,10 +56,7 @@
             dataType: "jsonp",
             data: $(this).serialize(),
             Vary: "Accept",
-            headers: {
-              "Access-Control-Allow-Origin": "*",
-              "Content-Type": "application/json",
-            },
+            ContentType": "application/json",
             mode: "corse",
             body: JSON.stringify({
               dataForm,
