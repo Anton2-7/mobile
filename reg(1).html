@@ -4,11 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="upgrade-insecure-requests"
-    />
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Регистрация</title>
     <link rel="stylesheet" href="style/style.css" />
@@ -19,13 +14,7 @@
       <p class="container__reg-text">
         1. Введите имя пользователя telegram или идентификатор
       </p>
-      <form
-        id="Reg_t"
-        enctype="application/json"
-        action=""
-        method="POST"
-        onsubmit="return false"
-      >
+      <form id="Reg_t" method="POST">
         <input
           class="container__input-reg-username"
           placeholder="@Имя пользователя"
@@ -37,7 +26,8 @@
         <button
           class="container__reg-button-next"
           type="submit"
-          id="#authentication.html"
+          id="http://localhost:3000/authentication(2).html"
+          action=""
         >
           Далее
         </button>
@@ -50,29 +40,29 @@
       }
       document.querySelector(".container__input-reg-username").onclick = f1;
 
-      /*Попытка переадресации*/
+      /**/
       $("document").ready(function () {
         $("#Reg_t").on("submit", function () {
           let dataForm = $(this).serialize();
 
           $.ajax({
-            url: "https://176.99.6.251:8888/auth/",
+            url: "http://176.99.6.251:8888/auth/",
             method: "post",
             dataType: "JSON",
             data: $(this).serialize(),
             Vary: "Accept",
-            headers: {
-              "Access-Control-Allow-Origin": "<origin>",
-              "Content-Type": "application/json",
-            },
+            AccesControlAllowOrigin: "*",
+            ContentType: "application/json",
             mode: "corse",
             body: JSON.stringify({
               dataForm,
               type: "authorize",
             }),
-            // success: function (data) {
-            //   $("#message").html(data);
-            // },
+            success: function (data) {
+              window.location.assign(
+                "http://localhost:3000/authentication(2).html"
+              );
+            },
           });
         });
       });

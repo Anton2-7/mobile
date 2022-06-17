@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="style/style.css" />
     <title>Потверждение почты</title>
   </head>
@@ -11,12 +12,15 @@
     <div class="authentication-reg">
       <h1 class="authentication__reg-headline">Регистрация</h1>
       <p class="authentication__reg-text">2. Введите код потверждения</p>
-      <input
-        class="authentication__input-reg-username"
-        type="text"
-        placeholder="Код потверждения"
-        name="register-username"
-      />
+      <form id="code-verify" method="POST">
+        <input
+          class="authentication__input-reg-username"
+          name="X-Code"
+          placeholder="Код потверждения"
+          name="register-username"
+          required
+        />
+      </form>
       <button class="authentication__reg-button-next">Далее</button>
     </div>
     <script>
@@ -26,6 +30,31 @@
       }
       document.querySelector(".authentication__input-reg-username").onclick =
         f1;
+
+      $("document").ready(function () {
+        $("#code-verify").on("submit", function () {
+          let dataEnter = $(this).serialize();
+
+          $.ajax({
+            url: "http://176.99.6.251:8888/verify/",
+            method: "post",
+            dataType: "JSON",
+            data: $(this).serialize(),
+            Vary: "Accept",
+            AccesControlAllowOrigin: "*",
+            ContentType: "application/json",
+            mode: "corse",
+            body: JSON.stringify({
+              dataEnter,
+            }),
+            // success: function (data) {
+            //   window.location.assign(
+            //     "http://localhost:3000/authentication(2).html"
+            //   );
+            // },
+          });
+        });
+      });
     </script>
   </body>
 </html>
