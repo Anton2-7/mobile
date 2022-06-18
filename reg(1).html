@@ -39,7 +39,8 @@
 
       /**/
       $("document").ready(function () {
-        $("#Reg_t").on("submit", function () {
+        $("#Reg_t").on("submit", function (e) {
+          e.preventDefault();
           let dataForm = $(this).serialize();
 
           $.ajax({
@@ -47,19 +48,14 @@
             method: "post",
             dataType: "JSON",
             data: $(this).serialize(),
-            Vary: "Accept",
-            AccesControlAllowOrigin: "*",
             ContentType: "application/json",
-            mode: "corse",
             body: JSON.stringify({
               dataForm,
               type: "authorize",
             }),
-            // success: function (data) {
-            //   window.location.assign(
-            //     "https://anton2-7.github.io/mobile/authentication(2).html"
-            //   );
-            // },
+            success: function (data) {
+              window.location.assign("authentication(2).html");
+            },
           });
         });
       });
