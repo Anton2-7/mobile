@@ -15,37 +15,45 @@
       <form id="code-verify" method="POST">
         <input
           class="authentication__input-reg-username"
-          name="X-Code"
+          name="code"
           placeholder="Код потверждения"
           name="register-username"
           required
         />
+        <input name="type" value="authcode" type="hidden" />
       </form>
-      <button class="authentication__reg-button-next">Далее</button>
+      <button class="authentication__reg-button-next" type="submit">
+        Далее
+      </button>
     </div>
     <script>
       function f1() {
         let a = document.querySelector(".authentication__reg-button-next");
         a.classList.add("bt-active");
       }
+
       document.querySelector(".authentication__input-reg-username").onclick =
         f1;
+      function f2() {
+        console.log("кнопка успешно нажата");
+      }
+      document.querySelector(".authentication__reg-button-next").onclick = f2;
 
       $("document").ready(function () {
-        $("#code-verify").on("submit", function () {
-          let dataEnter = $(this).serialize();
+        $("#code-verify").on("submit", function (e) {
+          e.preventDefault();
+
+          let dataForm = $(this).serialize();
 
           $.ajax({
             url: "http://176.99.6.251:8888/verify/",
             method: "post",
             dataType: "JSON",
             data: $(this).serialize(),
-            Vary: "Accept",
-            AccesControlAllowOrigin: "*",
             ContentType: "application/json",
-            mode: "corse",
             body: JSON.stringify({
-              dataEnter,
+              dataForm,
+              type: "authcode",
             }),
             // success: function (data) {
             //   window.location.assign(
