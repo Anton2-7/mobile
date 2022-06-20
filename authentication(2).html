@@ -15,16 +15,15 @@
       <form id="code-verify" method="POST">
         <input
           class="authentication__input-reg-username"
-          name="code"
           placeholder="Код потверждения"
-          name="register-username"
+          name="code"
           required
         />
         <input name="type" value="authcode" type="hidden" />
+        <button class="authentication__reg-button-next" type="submit">
+          Далее
+        </button>
       </form>
-      <button class="authentication__reg-button-next" type="submit">
-        Далее
-      </button>
     </div>
     <script>
       function f1() {
@@ -34,15 +33,10 @@
 
       document.querySelector(".authentication__input-reg-username").onclick =
         f1;
-      function f2() {
-        console.log("кнопка успешно нажата");
-      }
-      document.querySelector(".authentication__reg-button-next").onclick = f2;
 
       $("document").ready(function () {
         $("#code-verify").on("submit", function (e) {
           e.preventDefault();
-
           let dataForm = $(this).serialize();
 
           $.ajax({
@@ -53,13 +47,10 @@
             ContentType: "application/json",
             body: JSON.stringify({
               dataForm,
-              type: "authcode",
             }),
-            // success: function (data) {
-            //   window.location.assign(
-            //     "http://localhost:3000/authentication(2).html"
-            //   );
-            // },
+            success: function (data) {
+              console.log("кнопка успешно нажата");
+            },
           });
         });
       });
