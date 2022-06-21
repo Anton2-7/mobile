@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <title>Личный кабинет</title>
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    />
+  </head>
+  <body>
+    <div class="container__cabinet-balance">
+      <div class="container__cabinet-balance__header">
+        <p class="current-tab">Баланс</p>
+        <a href="notifications.html" class="notification">
+          <svg
+            width="18"
+            height="22"
+            viewBox="0 0 19 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M8.93792 20C10.0436 20 10.9483 19.1 10.9483 18H6.92756C6.92756 19.1 7.83222 20 8.93792 20ZM14.969 14V9C14.969 5.93 13.3305 3.36 10.4457 2.68V2C10.4457 1.17 9.77221 0.5 8.93791 0.5C8.10362 0.5 7.43015 1.17 7.43015 2V2.68C4.55534 3.36 2.90684 5.92 2.90684 9V14L0.896484 16V17H16.9793V16L14.969 14ZM12.9586 15H4.9172V9C4.9172 6.52 6.43502 4.5 8.93791 4.5C11.4408 4.5 12.9586 6.52 12.9586 9V15Z"
+              fill="white"
+              fill-opacity="0.74"
+            />
+          </svg>
+          <div class="n-value">
+            <p>4</p>
+          </a>
+        </div>
+        <div class="burger-menu burger-menu_active">
+          <a class="burger-menu__button">
+            <span class="burger-menu__lines"></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="burger-menu__nav" id="nav-menu-burger">
+        <a href="#"
+          ><div class="account-switcher">
+            <div class="account-avatar"></div>
+            <h1 class="user-name">Johny777</h1>
+            <p class="user-id">id 465738</p>
+          </div></a
+        >
+        <a href="#"
+          ><svg
+            width="24"
+            height="18"
+            viewBox="0 0 22 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="nav__icons-menu"
+            stroke-width="0.2"
+          >
+            <path
+              d="M11 0C17.075 0 22 2.686 22 6V10C22 13.314 17.075 16 11 16C5.033 16 0.176 13.409 0.005 10.177L0 10V6C0 2.686 4.925 0 11 0ZM11 12C7.28 12 3.99 10.993 2 9.45V10C2 11.882 5.883 14 11 14C16.01 14 19.838 11.97 19.995 10.118L20 10L20.001 9.45C18.011 10.992 14.721 12 11 12ZM11 2C5.883 2 2 4.118 2 6C2 7.882 5.883 10 11 10C16.117 10 20 7.882 20 6C20 4.118 16.117 2 11 2Z"
+              fill="2"
+            />
+            Баланс</svg
+          >Баланс</a
+        >
+        <a href="#"
+          ><svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 19"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="nav__icons-menu"
+            stroke-width="0.2"
+          >
+            <path
+              d="M2 17H18V10H20V18C20 18.2652 19.8946 18.5196 19.7071 18.7071C19.5196 18.8946 19.2652 19 19 19H1C0.734784 19 0.48043 18.8946 0.292893 18.7071C0.105357 18.5196 0 18.2652 0 18V10H2V17ZM12 7V13H8V7H3L10 0L17 7H12Z"
+            />
+            Новый перевод</svg
+          >Новый перевод</a
+        >
+        <a href="#">
+          <svg
+            width="20"
+            height="22"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="nav__icons-menu"
+            stroke-width="0.2"
+          >
+            <path
+              d="M10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20C4.477 20 0 15.523 0 10H2C2 14.418 5.582 18 10 18C14.418 18 18 14.418 18 10C18 5.582 14.418 2 10 2C7.25 2 4.824 3.387 3.385 5.5H6V7.5H0V1.5H2V4C3.824 1.57 6.729 0 10 0ZM11 5V9.585L14.243 12.828L12.828 14.243L9 10.413V5H11Z"
+            />
+            История</svg
+          >История</a
+        >
+        <div class="burger-menu__overlay"></div>
+      </div>
+    </div>
+    <div class="container__cabinet-balance__main">
+      <div class="gretings">Цифровое спасибо</div>
+      <div class="transaction-form">
+      <form action="formdata" method="post" name="form1" id="new-transaction">
+        <div class="new-transactions-form ">
+        <p><select class="select " name="list1" id="select2" value="23">
+         <option id="cover-forms">Выберите из списка</option>
+         <option id="user">Пользователь 1</option>
+         <option id="user">Пользователь 2</option>
+         <option id="user">Пользователь 3</option>
+         <option id="user">Пользователь 4</option>
+         <option id="user">Пользователь 5</option>
+        </select></p>
+        <p><input type="submit" class="send-b d" value="Отправить"></p>
+         </div>
+         <div class="thankgiving-info d">
+          <div class="thankgibing-wrapper ">
+          <p class="thankgiving-text">Перевести спасибок</p>
+          <p class="thankgiving-available">Доступно:<span> 2 300</span></p>            
+          </div>
+          <input class="thankgiving-value" placeholder="0"> </div>
+         </div>
+         <textarea  type="text" placeholder="Обоснование" class="thankgiving-justificatior d"></textarea>
+       </form>
+
+</div>
+
+    <nav class="nav__bottom-menu">
+      <a href="cabinet-balance.html" class="nav__bottom-menu__link">
+        <svg
+          width="24"
+          height="18"
+          viewBox="0 0 22 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="nav__icons-menu"
+          stroke-width="0.2"
+        >
+          <path
+            d="M11 0C17.075 0 22 2.686 22 6V10C22 13.314 17.075 16 11 16C5.033 16 0.176 13.409 0.005 10.177L0 10V6C0 2.686 4.925 0 11 0ZM11 12C7.28 12 3.99 10.993 2 9.45V10C2 11.882 5.883 14 11 14C16.01 14 19.838 11.97 19.995 10.118L20 10L20.001 9.45C18.011 10.992 14.721 12 11 12ZM11 2C5.883 2 2 4.118 2 6C2 7.882 5.883 10 11 10C16.117 10 20 7.882 20 6C20 4.118 16.117 2 11 2Z"
+            fill="2"
+          />
+          Баланс
+        </svg>
+        <span class="nav__text-menu">Баланс</span>
+      </a>
+      <a href="" class="nav__bottom-menu__link nav__bottom-menu__link-active">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 19"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="nav__icons-menu"
+          stroke-width="0.2"
+        >
+          <path
+            d="M2 17H18V10H20V18C20 18.2652 19.8946 18.5196 19.7071 18.7071C19.5196 18.8946 19.2652 19 19 19H1C0.734784 19 0.48043 18.8946 0.292893 18.7071C0.105357 18.5196 0 18.2652 0 18V10H2V17ZM12 7V13H8V7H3L10 0L17 7H12Z"
+          />
+          Новый перевод
+        </svg>
+
+        <span class="nav__text-menu">Новый перевод</span>
+      </a>
+      <a href="" class="nav__bottom-menu__link">
+        <svg
+          width="20"
+          height="22"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="nav__icons-menu"
+          stroke-width="0.2"
+        >
+          <path
+            d="M10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20C4.477 20 0 15.523 0 10H2C2 14.418 5.582 18 10 18C14.418 18 18 14.418 18 10C18 5.582 14.418 2 10 2C7.25 2 4.824 3.387 3.385 5.5H6V7.5H0V1.5H2V4C3.824 1.57 6.729 0 10 0ZM11 5V9.585L14.243 12.828L12.828 14.243L9 10.413V5H11Z"
+          />
+          История
+        </svg>
+
+        <span class="nav__text-menu">История</span>
+      </a>
+    </nav>
+    <script>
+
+    function f1 () {
+  let a = document.querySelector('.thankgiving-info');
+  let b = document.querySelector('.thankgiving-justificatior');
+  let c = document.querySelector ('.send-b');
+  let sel = document.getElementById('select2').value;
+  if (sel == "Выберите из списка"){
+  a.classList.add("d");
+  b.classList.add("d");
+  c.classList.add("d");
+  } else {
+    a.classList.remove("d");
+    b.classList.remove("d");
+    c.classList.remove("d");
+  }
+    }
+    select2.onchange = f1;
+
+
+    $("document").ready(function () {
+      $("#new-transaction").on("submit", function (e) {
+        e.preventDefault();
+       
+        });
+      });
+
+    
+      $(document).ready(function () {
+        $(".burger-menu__button").click(function () {
+          $("#nav-menu-burger").fadeIn();
+        });
+      });
+
+      $(".burger-menu__overlay").click(function () {
+        $("#nav-menu-burger").fadeOut();
+      });
+
+    </script>
+  </body>
+</html>
