@@ -30,6 +30,9 @@ body {
   justify-content: center;
   flex-direction: column;
 }
+
+.calendar-input {
+}
 .container-login {
   width: 100%;
   max-width: 328px;
@@ -490,6 +493,31 @@ body {
   cursor: pointer;
   fill: rgba(255, 255, 255, 0.74);
 }
+.fa-calendar {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  color: rgba(0, 0, 0, 0.38);
+  display: block;
+}
+.fa-times {
+  display: none !important;
+}
+.display {
+  display: block !important;
+}
+
+.btn-icon {
+  background: transparent;
+  border: none !important;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  width: 10px;
+  height: 10px;
+  display: none;
+}
 .n-value {
   width: 16px;
   height: 16px;
@@ -664,6 +692,7 @@ body {
 }
 .period-of-time {
   margin-top: 20px;
+  position: relative;
 }
 .period-of-time input {
   width: 328px;
@@ -673,6 +702,14 @@ body {
   border-radius: 4px;
   border: none;
   outline: none;
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: rgba(0, 0, 0, 0.87);
 }
 .currency-of-account {
   width: 328px;
@@ -684,9 +721,11 @@ body {
   height: 128px;
   background: rgba(33, 33, 33, 0.08);
   border-radius: 4px;
-  margin-top: 5px;
+  margin-top: 20px;
   padding: 10px;
+  position: relative;
 }
+
 .currency {
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -729,18 +768,35 @@ body {
   position: relative;
   margin-left: 169px;
   margin-top: -128px;
+  padding: 11px 12px;
   border-radius: 4px;
 }
-.my-account-reminder-value {
+.reminder-value-chosed {
+  width: 160px;
+  background: rgba(33, 33, 33, 0.08);
+  border-radius: 4px;
+  height: 108px;
+  margin-top: 20px;
+  padding: 11px 12px;
+  display: none;
+}
+.premiums-accrued {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.25px;
-  padding: 7px;
-  text-align: center;
   color: rgba(0, 0, 0, 0.6);
+}
+.value-of-premiums {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 48px;
+  line-height: 72px;
+  letter-spacing: -0.5px;
+  color: rgba(0, 0, 0, 0.87);
 }
 .currency-reminder-value {
   font-family: "Roboto", sans-serif;
@@ -753,6 +809,35 @@ body {
   text-overflow: clip;
   margin-left: 20px;
   margin-top: 5px;
+}
+.burned-thankgivings {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  width: 160px;
+  height: 108px;
+  position: absolute;
+  margin-left: 168px;
+  margin-top: 20px;
+  padding: 11px 12px;
+  display: none;
+}
+.value-burned {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 48px;
+  line-height: 72px;
+  letter-spacing: -0.5px;
+  color: rgba(0, 0, 0, 0.87);
+}
+.burned {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: rgba(0, 0, 0, 0.6);
 }
 .distributed__second {
   font-family: "Roboto", sans-serif;
@@ -791,11 +876,13 @@ body {
   height: 44px;
   background: rgba(33, 33, 33, 0.08);
   border-radius: 4px;
-  margin-left: -170px;
   margin-top: 20px;
   padding: 12px;
+  right: 0;
+  top: 115px;
   display: flex;
-  flex-direction: row;
+  position: absolute;
+  margin-left: 20px;
 }
 .agreement {
   font-family: "Roboto", sans-serif;
