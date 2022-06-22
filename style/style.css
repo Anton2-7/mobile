@@ -574,11 +574,14 @@ body {
 .container__notify-card {
   margin-top: 10px;
   max-width: 324px;
+  box-sizing: border-box;
   max-height: 320px;
   width: 324px;
   background: rgba(33, 33, 33, 0.08);
   padding: 8px 12px;
   border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
 }
 .notify-dates {
   display: flex;
@@ -1067,7 +1070,7 @@ select {
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  margin-left: 50px;
+  margin-left: 49px;
   letter-spacing: 0.25px;
   color: rgba(0, 0, 0, 0.38);
 }
@@ -1079,12 +1082,12 @@ select {
   font-style: normal;
   font-weight: 300;
   font-size: 60px;
+  line-height: 72px;
+  padding-top: 6px;
   letter-spacing: -0.5px;
-  padding-top: 9px;
-  padding-bottom: 6px;
-  width: 300px;
   color: rgba(0, 0, 0, 0.87);
   background: none;
+  width: 300px;
   border: none;
   outline: none;
 }
@@ -1134,4 +1137,134 @@ select {
   color: #ffffff;
   margin-top: 280px;
   position: absolute;
+}
+.container_thankginig-succes {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 180px;
+  text-align: center;
+}
+.descending-value {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  padding: 10px 0;
+  line-height: 56px;
+  color: rgba(0, 0, 0, 0.87);
+}
+.thankgiving-message {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: rgba(0, 0, 0, 0.38);
+}
+hr {
+  width: 328px;
+  margin: 21px auto;
+  background: rgba(0, 0, 0, 0.12);
+}
+.the-receiver {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: rgba(0, 0, 0, 0.38);
+}
+.the-receiver span {
+  color: black;
+}
+.button-to-start {
+  width: 327px;
+  height: 48px;
+  background: rgba(0, 0, 0, 0.87);
+  border-radius: 4px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  margin: auto;
+  margin-top: 100px;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  color: #ffffff;
+  cursor: pointer;
+}
+.container__notify-fullscreen {
+  height: 89%;
+  width: 90%;
+  background: rgba(33, 33, 33, 0.08);
+  border-radius: 4px;
+  margin: auto;
+  position: absolute;
+  display: flex;
+  top: 55px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  flex-direction: column;
+}
+.date__wrapper {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.38);
+}
+.date__wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 188px;
+}
+.date_time {
+  margin-left: 20px;
+}
+.new-thanks {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  position: absolute;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  margin-top: 24px;
+  color: rgba(0, 0, 0, 0.87);
+}
+.counter-status {
+  position: absolute;
+  right: 9px;
+  top: 10px;
+}
+.thanks-value {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 56px;
+  position: absolute;
+  margin-top: 55px;
+  color: #000000;
+}
+.notify-comment {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  position: absolute;
+  line-height: 24px;
+  margin-top: 120px;
+  letter-spacing: 0.5px;
+  color: rgba(0, 0, 0, 0.38);
 }
